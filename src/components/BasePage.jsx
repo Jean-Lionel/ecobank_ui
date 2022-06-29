@@ -1,8 +1,11 @@
 import { Box } from "@mui/material";
+import Annimation from "./Animation";
 
 const BasePage = (props) => {
-    return (<Box>
-        <h1>Je suis un Millionnaire</h1>
+    return (<Box sx={{
+        width: "95%",
+        margin: "auto"
+    }}>
         {props.children}
     </Box> );
 }
