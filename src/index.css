@@ -52,9 +52,32 @@ tr {
   font-weight: bold;
 }
 
+.textHeaderLeft{
+  font-family: Calculator;
+  text-align: right;
+  background-color: red;
+}
+.dateShow{
+  font-family: Calculator;
+  text-align: left;
+ font-size: 48px;
+  text-shadow: 1px 1px 2px rgb(245, 65, 65);
+  color: white;
+  background: rgb(245, 65, 65);
+}
+.timeRight{
+  font-family: Calculator;
+  font-family: Calculator;
+  text-align: right;
+  font-size: 48px;
+  text-shadow: 1px 1px 2px rgb(245, 65, 65);
+  color: white;
+  background: rgb(245, 65, 65);
+}
 .titleWelcome{
   font-family: "Calculator mono"
 }
+
 
 .table_buy {
   text-align: center;
