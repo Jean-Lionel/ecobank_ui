@@ -27,6 +27,12 @@ const CurrencyTable = () => {
                     <td>2</td>
                     <td>3</td>
                 </tr>
+
+                <tr>
+                    <td>
+                        <div className="currency-flag currency-flag-aed"></div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 
