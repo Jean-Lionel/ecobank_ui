@@ -2,6 +2,7 @@ import { Box, Grid } from "@mui/material";
 import { useState } from "react";
 import Animation from "../components/Animation";
 import BasePage from "../components/BasePage";
+import CurrencyTable from "../components/CurrencyTable";
 
 
 function format2Number(number) {
@@ -50,6 +51,8 @@ const Home = () => {
                     <h1>TEMPS</h1>
                 </Grid>
             </Grid> 
+
+           <CurrencyTable/> 
         </Box>
     </BasePage>);
 }
