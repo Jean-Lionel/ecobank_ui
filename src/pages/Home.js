@@ -39,8 +39,9 @@ const Home = () => {
                 </Grid>
 
                 <Grid item md={3} sx={{
-                    textAlign: 'left'
-                }}>
+                    textAlign: 'left',
+                    fontFamily: 'Calculator'
+                }} >
                    <h1> {date}</h1>
                 </Grid>
                 <Grid item md={3}>

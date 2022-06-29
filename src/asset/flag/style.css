@@ -1,7 +1,7 @@
 .currency-flag {
   display: inline-block;
-  width: 24px;
-  height: 16px;
+  width: 48px;
+  height: 32px;
   background-size: cover;
   background-image:url(./flags/aed.png);
 }
