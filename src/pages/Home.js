@@ -29,23 +29,83 @@ const Home = () => {
     return (<BasePage>
         <Box>
             <Grid>
-               <Animation/>
+               
             </Grid>
-            <Grid container spacing={2}>
-                <Grid item md={3}>
-                    <h1 className="titleMoney">DATE</h1>
-                    <h1 className="titleMoney">DATE</h1>
+            <Grid container spacing={1}>
+                <Grid item md={1}>
+                    <Box
+                        sx={
+                            {
+                                background: "rgb(138, 134, 134)",
+                            }
+                        }
+                    >
+                        <Box sx={{
+                            fontSize: '24px',
+                            fontWeight: 'bold',
+                            textAlign: 'center',
+                            
+                         }} >DATE</Box>
+                        <Box sx={{
+                             fontSize: '24px',
+                            fontWeight: 'bold',
+                            textAlign: 'center',
+                            color : 'rgb(7, 142, 226)'
+                         }}>DATE</Box>
+                    </Box>
                 </Grid>
-                <Grid item md={3} >
-                   <h1 className="dateShow"> {date}</h1>
+                <Grid item md={2} >
+                    <Box
+                        sx={
+                            {
+                                paddingTop: '16px',
+                                width: 'auto'
+                            }
+                        }
+                        >
+                  
+                        <span className="dateShow">
+                        {date} 
+                    </span>
+                    </Box>
+
                 </Grid>
-                <Grid item md={3}>
-                   <h1 className="timeRight"> {time}</h1>
+                <Grid item md={6}>
+                <Animation/>
                 </Grid>
-                <Grid item md={3}>
-                    
-                    <h1 className="textHeaderLeft">TIME</h1>
-                    <h1 className="textHeaderLeft">TEMPS</h1>
+                <Grid item md={2}>
+                    <Box sx={{
+                        textAlign: 'right',
+                        paddingTop: '16px',
+                    }}>
+                        <span className="timeRight">
+                        {time}
+                        </span>
+                    </Box>
+                   
+                </Grid>
+                <Grid item md={1}>
+                <Box
+                        sx={
+                            {
+                                background: "rgb(138, 134, 134)",
+                            }
+                        }
+                    >
+                        <Box sx={{
+                            fontSize: '24px',
+                            fontWeight: 'bold',
+                            textAlign: 'center',
+                            letterSpacing: '8px'
+                            
+                         }} >TIME</Box>
+                        <Box sx={{
+                             fontSize: '24px',
+                            fontWeight: 'bold',
+                            textAlign: 'center',
+                            color : 'rgb(7, 142, 226)'
+                         }}>TEMPS</Box>
+                    </Box>
                 </Grid>
             </Grid> 
 

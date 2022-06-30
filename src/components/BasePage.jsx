@@ -5,7 +5,7 @@ const BasePage = (props) => {
     return (<Box sx={{
         width: "95%",
         margin: "auto"
-    }}>
+    }} className="homePage">
         {props.children}
     </Box> );
 }
