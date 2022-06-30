@@ -10,14 +10,34 @@ const CurrencyTable = () => {
             <thead>
                 <tr>
                     <th></th>
-                    <th className="table_buy">
-                        <h2>WE BUY AT</h2>
-                        <h2>NOUS ACHETONS A</h2>
-
+                    <th>
+                        <Box sx={{
+                            textAlign: "center",
+                            fontFamily: "Helvetica",
+                            fontWeight: 800,
+                        }}>
+                            <h1 style={{
+                                letterSpacing: "12px"
+                            }} >WE BUY AT</h1>
+                            <h1  style={{
+                                color: 'rgb(7, 142, 226)'
+                            }}>NOUS ACHETONS A</h1>
+                        </Box>
                     </th>
                     <th className="table_buy">
-                       <h2> WE SELL AT</h2>
-                       <h2> NOUS VENDONS A</h2>
+                    <Box sx={{
+                            textAlign: "center",
+                            fontFamily: "Helvetica",
+                            fontWeight: 800,
+                        }}>
+                            <h1 style={{
+                                letterSpacing: "12px"
+                            }} >WE SELL AT</h1>
+                            <h1 style={{
+                                color: 'rgb(7, 142, 226)'
+                            }}>NOUS VENDONS A</h1>
+                        </Box>
+                       
                     </th>
                 </tr>
             </thead>
@@ -32,13 +52,22 @@ const CurrencyTable = () => {
                            </div>
                         </td>
                         <td>
-                            <div className="montant">
+                            <div style={{
+                                textAlign: "center",
+                            }}>
+                            <span className="montant">
                             {Math.floor(Math.random() * 10000000)}
+                            </span>
                             </div>
+                            
                         </td>
                         <td>
-                            <div className="montant">
-                            {Math.floor(Math.random() * 10000000)}
+                            <div style={{
+                                textAlign: "center",
+                            }}>
+                            <span className="montant">
+                              {Math.floor(Math.random() * 10000000)}
+                            </span>
                             </div>
                         </td>
                   </tr>

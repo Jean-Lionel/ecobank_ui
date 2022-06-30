@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: "Calculator";
-  src: url("asset/font/digital/digital-7.ttf") format("truetype");
+  src: url("asset/font/digital/digital-7.ttf") format("trueType");
 }
 
 @font-face {
   font-family: "Calculator mono";
-  src: url("asset/font/digital/digital-7-mono.ttf") format("truetype");
+  src: url("asset/font/digital/digital-7-mono.ttf") format("trueType");
 }
 
 * {
@@ -49,7 +49,7 @@ tr {
 
 .titleMoney {
   font-family: Calculator;
-  font-size: 60px;
+  font-size: 30px;
   text-align: left;
   font-weight: bold;
 }
@@ -58,8 +58,12 @@ tr {
   font-family: Calculator;
   margin: 5px 20px;
   text-align: center;
-  font-size: 60px;
+  font-size: 30px;
   font-weight: bold;
+  letter-spacing: 10px;
+  text-shadow: 2px 0px 14px rgba(255, 0, 0, 0.79);
+  background:rgb(245, 65, 65);
+  color: #fff;
 }
 
 .textHeaderLeft{
@@ -86,10 +90,4 @@ tr {
 }
 .titleWelcome{
   font-family: "Calculator mono"
-}
-
-
-.table_buy {
-  text-align: center;
-  font-size: 25px;
 }
