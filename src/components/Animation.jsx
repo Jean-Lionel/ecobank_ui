@@ -1,6 +1,6 @@
 const Animation = () => {
     return (<marquee>
-         <h1 class="titleWelcome">WELCOME TO YOU</h1>
+         <h1 className="titleWelcome">WELCOME TO YOU</h1>
     </marquee>);
 }
  

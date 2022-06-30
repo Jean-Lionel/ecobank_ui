@@ -11,25 +11,32 @@ function format2Number(number) {
 }
 function getTime() {
     const time = new Date();
-    return format2Number(time.getHours()) + " : " + format2Number(time.getMinutes()) ;
+    return format2Number(time.getHours()) + " : " + format2Number(time.getMinutes()) + " : " + format2Number(time.getSeconds());
 }
 
 function getDate() {
     const time = new Date();
-    return time.getFullYear() + "." + format2Number(time.getMonth()) + "." + format2Number(time.getDate()) ;
+    return time.getFullYear() + "." + format2Number(time.getMonth()) + "." + format2Number(time.getDate());
 }
 
 const Home = () => {
-    const [time, setTime] = useState(getTime());
+    const [time, setTime] = useState(0);
     const [date, setDate] = useState(getDate())
     const [exemple, setExemple] = useState(0);
 
+    useEffect(() => {
+        setInterval(() => {
+            setTime(() => {
+                //importconsole.log("je suis cool")
+                return getTime();
+             })
+        }, 1000);
+        return () => {
+            //clearTimeout();
+        };
+    }, []);
 
-    setTimeout(() => {
-        const x = getTime()
-         setTime(x)
-    }, 1000);
-
+    
     return (<BasePage>
         <Box>
             <Grid>
@@ -76,10 +83,12 @@ const Home = () => {
                     </Box>
 
                 </Grid>
-                <Grid item md={6}>
+                <Grid item md={4}>
                 <Animation/>
                 </Grid>
-                <Grid item md={2}>
+                <Grid item md={
+                    4
+                }>
                     <Box sx={{
                         textAlign: 'right',
                         paddingTop: '16px',

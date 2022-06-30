@@ -1,7 +1,9 @@
 import { Box } from "@mui/system";
+import React from "react"
 import countries from "./CountryCurrency";
-const CurrencyTable = () => {
+const CurrencyTable = React.memo(function() {
 
+    console.log("Appeler")
     function padd_number(value) {
         return value.toString().padEnd(8,'0')
     }
@@ -43,8 +45,8 @@ const CurrencyTable = () => {
             </thead>
             <tbody>
               
-                {countries.map(e => (
-                 <tr>
+                {countries.map((e, index) => (
+                 <tr key={index} className="">
                       <td >
                             <div className="currencyName">
                             <div className={"currency-flag currency-flag-" + e.name.toLowerCase()}></div>
@@ -79,6 +81,6 @@ const CurrencyTable = () => {
         </table>
         
     </Box> );
-}
+})
  
 export default CurrencyTable;
