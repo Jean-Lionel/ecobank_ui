@@ -2,11 +2,12 @@ import { Box } from "@mui/system";
 import countries from "./CountryCurrency";
 const CurrencyTable = () => {
 
+    function padd_number(value) {
+        return value.toString().padEnd(8,'0')
+    }
+
     return (<Box>
-
-
         <table className="table">
-           
             <thead>
                 <tr>
                     <th></th>
@@ -37,7 +38,6 @@ const CurrencyTable = () => {
                                 color: 'rgb(7, 142, 226)'
                             }}>NOUS VENDONS A</h1>
                         </Box>
-                       
                     </th>
                 </tr>
             </thead>
@@ -56,7 +56,7 @@ const CurrencyTable = () => {
                                 textAlign: "center",
                             }}>
                             <span className="montant">
-                            {Math.floor(Math.random() * 10000000)}
+                            {padd_number(Math.floor(Math.random() * 10000000))}
                             </span>
                             </div>
                             
@@ -66,7 +66,7 @@ const CurrencyTable = () => {
                                 textAlign: "center",
                             }}>
                             <span className="montant">
-                              {Math.floor(Math.random() * 10000000)}
+                              {padd_number(Math.floor(Math.random() * 10000000))}
                             </span>
                             </div>
                         </td>

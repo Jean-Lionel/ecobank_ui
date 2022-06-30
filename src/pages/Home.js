@@ -1,8 +1,9 @@
 import { Box, Grid } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Animation from "../components/Animation";
 import BasePage from "../components/BasePage";
 import CurrencyTable from "../components/CurrencyTable";
+import FooterHome from "../components/FooterHome";
 
 function format2Number(number) {
 
@@ -21,15 +22,20 @@ function getDate() {
 const Home = () => {
     const [time, setTime] = useState(getTime());
     const [date, setDate] = useState(getDate())
+    const [exemple, setExemple] = useState(0);
+
 
     setTimeout(() => {
-        setTime(getTime())
-    }, 30000);
+        const x = getTime()
+         setTime(x)
+    }, 1000);
 
     return (<BasePage>
         <Box>
             <Grid>
-               
+                {/* <h1>
+                    {exemple}
+                </h1> */}
             </Grid>
             <Grid container spacing={1}>
                 <Grid item md={1}>
@@ -109,7 +115,8 @@ const Home = () => {
                 </Grid>
             </Grid> 
 
-           <CurrencyTable/> 
+            <CurrencyTable /> 
+           <FooterHome/> 
         </Box>
     </BasePage>);
 }
