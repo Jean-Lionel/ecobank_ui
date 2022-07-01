@@ -1,6 +1,10 @@
+import Dashboard from "../components/dashboard/Dashboard";
+
+;
+
 const BaseAdmin = () => {
     return (<>
-        Admnistration
+        <Dashboard/>
     </>);
 }
  
