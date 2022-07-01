@@ -1,8 +1,9 @@
-import Form from "../components/Form";
+
+import LoginForm from "../components/routes/LoginForm";
 
 const Login = () => {
     return (<>
-        <Form/>
+        <LoginForm/>
     </>);
 }
  
