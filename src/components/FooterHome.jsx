@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const FooterHome = () => {
     return (<Box>
@@ -33,6 +34,10 @@ const FooterHome = () => {
                 TAUX DE CHANGE
             </span>
         </div>
+
+        <Link to="/invoices">Invoices</Link> |{" "}
+        <Link to="/expenses">Expenses</Link> |{" "}
+        <Link to="/login">Login</Link>
     </Box> );
 }
  
