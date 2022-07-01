@@ -3,7 +3,7 @@ import Annimation from "./Animation";
 
 const BasePage = (props) => {
     return (<Box sx={{
-        width: "70%",
+        width: "80%",
         margin: "auto",
         backgroundColor: "black",
         color: "white"

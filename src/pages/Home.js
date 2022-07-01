@@ -123,8 +123,14 @@ const Home = () => {
                     </Box>
                 </Grid>
             </Grid> 
-
             <CurrencyTable /> 
+            {/* <Grid container spacing={2}>
+                <Grid item md={6}>
+               <CurrencyTable /> 
+                </Grid>
+               
+
+            </Grid> */}
            <FooterHome/> 
         </Box>
     </BasePage>);
