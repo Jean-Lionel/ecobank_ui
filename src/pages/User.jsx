@@ -26,9 +26,9 @@ const User = () => {
     }
     return (<Dashboard>
         <form onClick={saveUser}>
-            <input type="text" placeholder="NAME" onChange={(e)=> setName(e.target.value)}/>
-            <input type="text" placeholder="EMAIL" onChange={(e)=> setEmail(e.target.value)}/>
-            <input type="text" placeholder="PASSWORD" onChange={(e) => setPassword(e.target.value)} />
+            <input type="text" required placeholder="NAME" onChange={(e)=> setName(e.target.value)}/>
+            <input type="email" required placeholder="EMAIL" onChange={(e)=> setEmail(e.target.value)}/>
+            <input type="text" required placeholder="PASSWORD" onChange={(e) => setPassword(e.target.value)} />
             <input type="submit" value="Enregistrer" />
             {error && <Alert>
                 {JSON.stringify(error)}
@@ -42,9 +42,11 @@ const User = () => {
                 <TableCell>Email</TableCell>
             </TableRow>
 
-            {listeUser && <TableRow>
-                {JSON.stringify(listeUser)}
-                </TableRow>}
+            {listeUser && listeUser.map((el, index) => <TableRow>
+                <TableCell>{ ++index}</TableCell>
+                <TableCell>{ el.name}</TableCell>
+                <TableCell>{ el.email}</TableCell>
+            </TableRow>)}
         </Table>
     </Dashboard>);
 }
