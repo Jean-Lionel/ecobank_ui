@@ -5,10 +5,12 @@ import {
 } from "react-router-dom";
 import Expenses from "./components/routes/expenses";
 import Invoices from "./components/routes/invoices";
+import AdminDashboard from "./pages/AdminDashboard";
 import BaseAdmin from "./pages/BaseAdmin";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import User from "./pages/User";
 import ProtectedRoute from "./utility/ProtectedRoute";
 
 const App = () => {
@@ -21,7 +23,8 @@ const App = () => {
         <Route exact path="/login" component={Login} />
         <Route exact path="/" component={Home} />
 
-        <ProtectedRoute exact path="/admin" component={BaseAdmin} /> 
+        <ProtectedRoute exact path="/admin" component={AdminDashboard} /> 
+        <ProtectedRoute exact path="/users" component={User} /> 
         
       </Switch>
       </BrowserRouter>
