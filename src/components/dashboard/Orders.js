@@ -77,7 +77,7 @@ export default function Orders() {
     </TableRow>
     </TableHead>
     <TableBody>
-          {devises && devises.map((row) => (
+          {devises && devises.map((row , index) => (
       <>
       <TableRow key={row.id}>
         <TableCell>
@@ -86,9 +86,9 @@ export default function Orders() {
       <TableCell>{row.name}</TableCell>
       <TableCell>{row.country}</TableCell>
      
-                <TableCell align="right">{getLastIndex(row?.devise_prices)?.buy_at}</TableCell>
-                <TableCell align="right">{getLastIndex(row?.devise_prices)?.sell_at}</TableCell>
-                <TableCell>{getLastIndex(row?.devise_prices)?.level}</TableCell>
+                <TableCell align="right">{row?.buy_at}</TableCell>
+                <TableCell align="right">{row?.sell_at}</TableCell>
+                <TableCell>{++index}</TableCell>
         <TableCell align="right">
                   <Button onClick={() => setSelectElement(row.id)} >  Update</Button>
                  

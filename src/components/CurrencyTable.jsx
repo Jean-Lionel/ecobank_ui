@@ -12,18 +12,7 @@ const CurrencyTable = React.memo(function () {
             setDonnes(data?.data)
         }
     }, [data])
-    
-    function getLastIndex(array) {
-
-        return Array.isArray(array) ? array[array.length - 1] : null;
-        
-      }
-
-    console.log("Appeler")
-    function padd_number(value) {
-        return value.toString().padEnd(8,'0')
-    }
-
+  
     return (<Box>
         <table className="table">
             <thead>
