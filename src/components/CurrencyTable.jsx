@@ -1,7 +1,23 @@
 import { Box } from "@mui/system";
-import React from "react"
-import countries from "./CountryCurrency";
-const CurrencyTable = React.memo(function() {
+import React, { useEffect, useState } from "react"
+import useFetchDataWithPagination from "../utility/useFetchDataWithPagination";
+const CurrencyTable = React.memo(function () {
+    
+    const { data } = useFetchDataWithPagination("devises");
+    
+    const [donnes, setDonnes] = useState(null)
+
+    useEffect(() => {
+        if (data?.data) {
+            setDonnes(data?.data)
+        }
+    }, [data])
+    
+    function getLastIndex(array) {
+
+        return Array.isArray(array) ? array[array.length - 1] : null;
+        
+      }
 
     console.log("Appeler")
     function padd_number(value) {
@@ -12,7 +28,9 @@ const CurrencyTable = React.memo(function() {
         <table className="table">
             <thead>
                 <tr>
-                    <th></th>
+                    <th>
+                        
+                    </th>
                     <th>
                         <Box sx={{
                             textAlign: "center",
@@ -45,7 +63,7 @@ const CurrencyTable = React.memo(function() {
             </thead>
             <tbody>
               
-                {countries.map((e, index) => (
+                {donnes && donnes.map((e, index) => (
                  <tr key={index} className="">
                       <td >
                             <div className="currencyName">
@@ -58,7 +76,10 @@ const CurrencyTable = React.memo(function() {
                                 textAlign: "center",
                             }}>
                             <span className="montant">
-                            {padd_number(Math.floor(Math.random() * 10000000))}
+                                    {
+                                       e.buy_at
+                                      
+                                    }
                             </span>
                             </div>
                             
@@ -68,7 +89,10 @@ const CurrencyTable = React.memo(function() {
                                 textAlign: "center",
                             }}>
                             <span className="montant">
-                              {padd_number(Math.floor(Math.random() * 10000000))}
+                                   
+                                    {
+                                        e.sell_at
+                                    }
                             </span>
                             </div>
                         </td>

@@ -17,7 +17,7 @@ function preventDefault(event) {
 }
 
 export default function Orders() {
-  const { data } = useFetchDataWithPagination("devises");
+  const { data,  refreshSearch} = useFetchDataWithPagination("devises");
   const { error, isLoading, submitData} = usePostData();
   const [devises, setDevises] = React.useState();
   const [selectElement, setSelectElement] = React.useState(0);
@@ -35,7 +35,12 @@ export default function Orders() {
     };
   }, [data]);
 
- 
+  function getLastIndex(array) {
+
+    return Array.isArray(array) ? array[array.length - 1] : null;
+    
+  }
+  
 
   const updateValue = (e) => {
     e.preventDefault();
@@ -53,6 +58,7 @@ export default function Orders() {
       setBuy("")
       setSell("")
     }
+    refreshSearch()
   }
   
   return (
@@ -79,9 +85,10 @@ export default function Orders() {
         </TableCell>
       <TableCell>{row.name}</TableCell>
       <TableCell>{row.country}</TableCell>
-      <TableCell>{row.paymentMethod} 12</TableCell>
-        <TableCell align="right">12</TableCell>
-        <TableCell align="right">12</TableCell>
+     
+                <TableCell align="right">{getLastIndex(row?.devise_prices)?.buy_at}</TableCell>
+                <TableCell align="right">{getLastIndex(row?.devise_prices)?.sell_at}</TableCell>
+                <TableCell>{getLastIndex(row?.devise_prices)?.level}</TableCell>
         <TableCell align="right">
                   <Button onClick={() => setSelectElement(row.id)} >  Update</Button>
                  
