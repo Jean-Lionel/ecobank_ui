@@ -9,7 +9,9 @@ const CurrencyTable = React.memo(function () {
 
     useEffect(() => {
         if (data?.data) {
-            setDonnes(data?.data)
+           const filterData=  data?.data.filter(elemenet => (elemenet.sell_at > 0 && elemenet.buy_at > 0))
+
+            setDonnes(filterData)
         }
     }, [data])
   

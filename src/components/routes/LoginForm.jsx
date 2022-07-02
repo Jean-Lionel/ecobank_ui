@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from "axios";
 import { Alert } from '@mui/material';
+import { useHistory } from 'react-router-dom';
 
 function Copyright(props) {
     return (
@@ -32,6 +33,7 @@ function Copyright(props) {
     export default function LoginForm() {
         const [error, setError] = React.useState('');
         const [isLoading, setIsLoading] = React.useState(false);
+        const history = useHistory();
         
         const handleSubmit = async (event) => {
             event.preventDefault();
@@ -44,13 +46,11 @@ function Copyright(props) {
                 password: data.get('password'),
             });
             
-            
             if(!email || !password) {
                 setError('Please enter email and password');
                 return;
             }
             setIsLoading(true);
-            
             console.log(email, password);
             try {
                 const response = await axios.post('/login/', {
@@ -62,7 +62,8 @@ function Copyright(props) {
                 localStorage.setItem('token', response.data.access_token);
                 localStorage.setItem('user', JSON.stringify(response.data.data));
                 setIsLoading(false);
-                window.location.href = '/admin';
+                //window.location.href = '/admin';
+                history.push("/admin")
             } catch (error) {
                 setError(error?.response?.data?.message);
                 setIsLoading(false);

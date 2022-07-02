@@ -21,8 +21,7 @@ function getDate() {
 
 const Home = () => {
     const [time, setTime] = useState(0);
-    const [date, setDate] = useState(getDate())
-    const [exemple, setExemple] = useState(0);
+    const [date] = useState(getDate())
 
     useEffect(() => {
         setInterval(() => {

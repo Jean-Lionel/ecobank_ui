@@ -1,8 +1,9 @@
 import Dashboard from "../components/dashboard/Dashboard";
 
-const User = () => {
+const Rapport = () => {
     return (<Dashboard>
-    </Dashboard>);
+        
+    </Dashboard> );
 }
  
-export default User;
+export default Rapport;

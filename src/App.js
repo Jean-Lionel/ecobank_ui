@@ -10,6 +10,7 @@ import BaseAdmin from "./pages/BaseAdmin";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Rapport from "./pages/Rapport";
 import User from "./pages/User";
 import ProtectedRoute from "./utility/ProtectedRoute";
 
@@ -25,6 +26,7 @@ const App = () => {
 
         <ProtectedRoute exact path="/admin" component={AdminDashboard} /> 
         <ProtectedRoute exact path="/users" component={User} /> 
+        <ProtectedRoute exact path="/rapport" component={Rapport} /> 
         
       </Switch>
       </BrowserRouter>
