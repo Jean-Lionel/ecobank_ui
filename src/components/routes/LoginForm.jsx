@@ -12,6 +12,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from "axios";
+import { Alert } from '@mui/material';
 
 function Copyright(props) {
     return (
@@ -136,7 +137,12 @@ function Copyright(props) {
             sx={{ mt: 3, mb: 2 }}
             >
             Se Connecter
-            </Button>
+                                </Button>
+                                {error && <Alert severity="error">
+                                    {JSON.stringify(error)}
+                                </Alert>}
+
+                                {isLoading && <span>wait ...</span>}
             {/* <Grid container>
             <Grid item xs>
             <Link href="#" variant="body2">
