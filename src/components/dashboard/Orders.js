@@ -9,7 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Title from './Title';
 import useFetchDataWithPagination from '../../utility/useFetchDataWithPagination';
 import usePostData from '../../utility/usePostData';
-import { Button } from '@mui/material';
+import { Button, Grid } from '@mui/material';
 
 
 function preventDefault(event) {
@@ -34,12 +34,6 @@ export default function Orders() {
       
     };
   }, [data]);
-
-  function getLastIndex(array) {
-
-    return Array.isArray(array) ? array[array.length - 1] : null;
-    
-  }
   
 
   const updateValue = (e) => {
@@ -60,10 +54,22 @@ export default function Orders() {
     }
     refreshSearch()
   }
+
+  const searchValues = (search) => {
+    
+  }
   
   return (
     <React.Fragment>
-    <Title>Les derniers prix</Title>
+      <Grid container spacing={2}>
+        <Grid item md={6}>
+          <Title>Les derniers prix </Title>
+        </Grid>
+        <Grid item md={6}>
+          <Title><input placeholder='Rechercher' onChange={(e) => searchValues(e.target.value)}/> </Title>
+        </Grid>
+      </Grid>
+      
     <Table size="small">
     <TableHead>
     <TableRow>
