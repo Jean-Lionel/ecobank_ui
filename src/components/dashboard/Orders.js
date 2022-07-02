@@ -56,7 +56,10 @@ export default function Orders() {
   }
 
   const searchValues = (search) => {
-    
+    if (data?.data) {
+      const searchV = data?.data.filter(el => JSON.stringify(el).toLowerCase().includes(search.toLowerCase()))
+      setDevises(searchV)
+    }
   }
   
   return (
