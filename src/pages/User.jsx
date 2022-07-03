@@ -22,10 +22,13 @@ const User = () => {
         e.preventDefault();
         const data = { email, name, password };
         submitData("register", data);
+        setEmail("")
+        setName("")
+        setPassword("")
         resfreshSearch();
     }
     return (<Dashboard>
-        <form onClick={saveUser}>
+        <form onSubmit={saveUser}>
             <input type="text" required placeholder="NAME" onChange={(e)=> setName(e.target.value)}/>
             <input type="email" required placeholder="EMAIL" onChange={(e)=> setEmail(e.target.value)}/>
             <input type="text" required placeholder="PASSWORD" onChange={(e) => setPassword(e.target.value)} />

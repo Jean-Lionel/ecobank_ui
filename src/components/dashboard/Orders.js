@@ -113,7 +113,7 @@ export default function Orders() {
                 <input type="number" onChange={(e)=> setSell(e.target.value)}/>
                 </TableCell>
                 <TableCell>
-                <input type="number" onChange={(e)=> setLevel(e.target.value)}/>
+            
                 </TableCell>
                 <TableCell>
                   <Button variant="contained" size="small" onClick={updateValue}>Modifier</Button>
