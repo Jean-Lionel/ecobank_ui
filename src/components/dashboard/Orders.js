@@ -23,7 +23,7 @@ export default function Orders() {
   const [selectElement, setSelectElement] = React.useState(0);
   const [buy, setBuy] = React.useState(null);
   const [sell, setSell] = React.useState(null);
-  const [level, setLevel] = React.useState(null);
+  //const [level, setLevel] = React.useState(null);
 
   React.useEffect(() => {
     if (data?.data) {
@@ -43,7 +43,7 @@ export default function Orders() {
       devise_id : selectElement,
       buy_at : buy ,
       sell_at :sell ,
-      level : level,
+      level : 20,
     }
 
     submitData("devise_prices", data)

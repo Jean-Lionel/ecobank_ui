@@ -57,6 +57,7 @@ function Copyright(props) {
                     email,
                     password
                 });
+
                 console.log(response.data.access_token, response.data.data);
                 
                 localStorage.setItem('token', response.data.access_token);
